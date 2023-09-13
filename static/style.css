@@ -16,7 +16,7 @@ html {
 	font-size: 20px;
 
 	color: var(--main-color);
-	background-color: var(--secondary-color);
+	background: var(--secondary-color);
 
 	transition-duration: var(--theme-transition-duration);
 }
@@ -25,10 +25,12 @@ a {
 
 	transition-duration: var(--theme-transition-duration);
 }
-
 .dark {
-	color: var(--main-color-dark);
 	background-color: var(--secondary-color-dark);
+}
+
+.dark * {
+	color: var(--main-color-dark);
 }
 .dark a {
 	color: var(--accent-color-dark);
@@ -37,7 +39,7 @@ a {
 
 
 body {
-	width: 100vw;
+	width: 100%;
 	height: 100%;
 
 	margin: 0;
@@ -55,16 +57,24 @@ header {
 	align-items: center;
 	justify-content: space-between;
 }
+header > * {
+	margin: 0.5rem;
+}
+
 header > h1 {
 	display: inline-block;
 }
 header a {
-	color: unset;
+	color: var(--main-color);
 	text-decoration: none;
+	background: none;
+
+	transition-duration: var(--theme-transition-duration);
 }
-header > * {
-	margin: 0.5rem;
+.dark header a {
+	color: var(--main-color-dark);
 }
+
 
 
 #content {
@@ -84,8 +94,6 @@ header > * {
 	overflow-y: scroll;
 }
 .grid-element {
-	/* width: 100%; */
-	/* height: 100%; */
 	aspect-ratio: 1 / 1;
 }
 
@@ -111,6 +119,8 @@ header > * {
 	object-position: center center;
 
 	opacity: 0;
+
+	user-select: none;
 }
 .card.loaded {
 	opacity: 1;
