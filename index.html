@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Carddds</title>
+	<link rel="stylesheet" href="static/style.css" />
+	<link rel="stylesheet" href="static/switch.css" />
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+	<script src="static/script.js"></script>
+
+	<header>
+		<h1><a href="/">hello</a></h1>
+		<label class="switch">
+			<input type="checkbox" onchange="change_theme(this);" id="theme_switch">
+			<span class="slider"></span>
+		</label>
+	</header>
+
+	<div id="content">
+		<div class="text">
+			<h1>cool photo gallery</h1>
+		</div>
+
+		<div class="grid-container">
+			<div class="grid-element blur-load" style="background-image: url(static/img/img1-small.jpg);">
+				<div class="card-container loading-overlay">
+					<img class="card" src="static/img/img1.jpg" loading="lazy">
+				</div>
+			</div>
+			<div class="grid-element blur-load" style="background-image: url(static/img/img2-small.jpg);">
+				<div class="card-container loading-overlay">
+					<img class="card" src="static/img/img2.jpg" loading="lazy">
+				</div>
+			</div>
+			<div class="grid-element double-space blur-load" style="background-image: url(static/img/img3-small.jpg);">
+				<div class="card-container loading-overlay">
+					<img class="card" src="static/img/img3.jpg" loading="lazy">
+				</div>
+			</div>
+			<div class="grid-element blur-load" style="background-image: url(static/img/img4-small.jpg);">
+				<div class="card-container loading-overlay">
+					<img class="card" src="static/img/img4.jpg" loading="lazy">
+				</div>
+			</div>
+			<div class="grid-element blur-load" style="background-image: url(static/img/img5-small.jpg);">
+				<div class="card-container loading-overlay">
+					<img class="card" src="static/img/img5.jpg" loading="lazy">
+				</div>
+			</div>
+		</div>
+		
+		<div class="text">
+			<h1>This is a test photo gallery</h1>
+			<p>I've made it using <a href="https://youtu.be/hJ7Rg1821Q0?si=UkXz-tqK6c0v1pCx">this tutorial</a></p>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+:root {
+	--main-color: #262626;
+	--secondary-color: #FFF4E9;
+	--accent-color: #826AED;
+
+	--main-color-dark: #FFF4E9;
+	--secondary-color-dark: #262626;
+	--accent-color-dark: #C879FF;
+
+	--theme-transition-duration: 0.5s;
+}
+
+html {
+	font-family: Bitter, Arial;
+	font-weight: 300;
+	font-size: 20px;
+
+	color: var(--main-color);
+	background-color: var(--secondary-color);
+
+	transition-duration: var(--theme-transition-duration);
+}
+a {
+	color: var(--accent-color);
+
+	transition-duration: var(--theme-transition-duration);
+}
+
+.dark {
+	color: var(--main-color-dark);
+	background-color: var(--secondary-color-dark);
+}
+.dark a {
+	color: var(--accent-color-dark);
+}
+
+
+
+body {
+	width: 100vw;
+	height: 100%;
+
+	margin: 0;
+}
+
+header {
+	position: sticky;
+	top: 0px;
+	z-index: 99;
+	
+	background-color: rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+header > h1 {
+	display: inline-block;
+}
+header a {
+	color: unset;
+	text-decoration: none;
+}
+header > * {
+	margin: 0.5rem;
+}
+
+
+#content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 60%;
+	height: 80vh;
+	overflow-y: scroll;
+}
+.grid-element {
+	/* width: 100%; */
+	/* height: 100%; */
+	aspect-ratio: 1 / 1;
+}
+
+.card-container {
+	overflow: hidden;
+
+	width: inherit;
+	height: inherit;
+
+	aspect-ratio: inherit;
+}
+.double-space {
+	grid-column: span 2;
+	aspect-ratio: 2 / 1;
+}
+
+.card {
+	display: block;
+	width: 100%;
+	height: 100%;
+	
+	object-fit: cover;
+	object-position: center center;
+
+	opacity: 0;
+}
+.card.loaded {
+	opacity: 1;
+	transition: opacity 300ms ease-in-out;
+}
+
+
+
+.blur-load {
+	background-size: cover;
+	background-position: center center;
+}
+.loading-overlay {
+	background-color: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(15px);
+
+	animation: loading-pulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes loading-pulse {
+	0% {
+		backdrop-filter: blur(10px);
+	}
+	100% {
+		backdrop-filter: blur(25px);
+	}
+}
