@@ -1,3 +1,10 @@
+:root {
+	--slider-width: 4rem;
+	--slider-height: 2rem;
+	--handle-size: 1.4rem;
+	--handle-margin: calc((var(--slider-height) - var(--handle-size)) / 2)
+}
+
 .switch {
 	position: relative;
 	display: inline-block;
@@ -22,12 +29,12 @@
 	
 	background-color: var(--accent-color);
 	
-	height: 2rem;
-	width: 4rem;
+	width: var(--slider-width);
+	height: var(--slider-height);
 	left: 0;
 	top: 0;
 
-	border-radius: 2rem;
+	border-radius: calc(var(--slider-height) / 2);
 
 	transition-duration: var(--theme-transition-duration);
 	-webkit-transition-duration: var(--theme-transition-duration);
@@ -41,11 +48,11 @@ input:checked + .slider {
 	position: absolute;
 	content: "";
 
-	top: 0.25rem;
-	left: 0.25rem;
-	width: 1.5rem;
-	height: 1.5rem;
-	border-radius: 1rem;
+	top: var(--handle-margin);
+	left: var(--handle-margin);
+	width: var(--handle-size);
+	height: var(--handle-size);
+	border-radius: calc(var(--handle-size) / 2);
 
 	background-color: var(--secondary-color);
 
@@ -54,5 +61,5 @@ input:checked + .slider {
 input:checked + .slider::before {
 	background-color: var(--secondary-color-dark);
 
-	transform: translateX(2rem);
+	transform: translateX(calc(var(--slider-width) - var(--handle-size) - (var(--handle-margin) * 2)));
 }
