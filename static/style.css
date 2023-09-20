@@ -127,12 +127,11 @@ header a {
 }
 .card.loaded {
 	opacity: 1;
-	transition: opacity 300ms ease-in-out;
-	transition: transform 350ms ease-in-out;
+	transition: transform 350ms ease-in-out, opacity 300ms ease-in-out;
 }
 .card.loaded:hover {
 	transform: scale(1);
-	transition: transform 350ms ease-in-out;
+	transition: transform 350ms ease-in-out, opacity 300ms ease-in-out;
 }
 
 
